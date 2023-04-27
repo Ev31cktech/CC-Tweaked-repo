@@ -51,6 +51,8 @@ function reload_taskList()
 	if tasks ~= nil then
 		tasks = jsonParser.parse(tasks);
 		tasks.counter = tasks.tasks[#tasks.tasks].id + 1;
+	else
+		tasks = {};
 	end
 	tasks.add = function(_name, _status, _priority, _creator, _assignees)
 		local task = {
