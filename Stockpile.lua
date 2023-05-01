@@ -2,7 +2,7 @@ local drawer = peripheral.wrap("back");
 drawer.getAmount = drawer_getAmount;
 minimum = 64
 
-function drawer'_getAmount() 
+function drawer_getAmount() 
 	return drawer.list()[2].count
 end
 
