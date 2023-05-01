@@ -1,10 +1,13 @@
 local drawer = peripheral.wrap("back");
-drawer.getAmount = drawer_getAmount;
 minimum = 64
 
 function drawer_getAmount() 
+	if(drawer.list() == nil) do
+		return 0;
+	end
 	return drawer.list()[2].count
 end
+drawer.getAmount = drawer_getAmount;
 
 while true do
 	local value = drawer.getAmount() > 64
